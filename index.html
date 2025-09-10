@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthPredict</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">HealthPredict</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#predict">Prediction</a></li>
+    <li><a href="#retina">Retinopathy</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button id="darkModeToggle" class="dark-toggle">🌙</button>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content" data-animate>
+    <h1>Predict Your Diabetes & Retinopathy Risk</h1>
+    <p>Stay informed and proactive about your health. Get personalized insights instantly.</p>
+    <a href="#predict" class="btn">Get Started</a>
+  </div>
+</section>
+
+<!-- Health Risk Prediction -->
+<section id="predict" class="container">
+  <h2>Health Risk Prediction</h2>
+  <div class="card form-card" data-animate>
+    <form id="riskForm" class="form">
+      <input type="number" placeholder="Pregnancies" title="Number of times pregnant" required>
+      <input type="number" placeholder="Glucose Level" title="Blood glucose level (mg/dL)" required>
+      <input type="number" placeholder="Blood Pressure" title="Diastolic blood pressure (mmHg)" required>
+      <input type="number" placeholder="Skin Thickness" title="Triceps skin fold thickness (mm)" required>
+      <input type="number" placeholder="Insulin Level" title="2-Hour serum insulin (mu U/ml)" required>
+      <input type="number" placeholder="BMI" step="0.1" title="Body Mass Index" required>
+      <input type="number" placeholder="Diabetes Pedigree Function" step="0.01" title="Genetic risk function" required>
+      <input type="number" placeholder="Age" title="Age in years" required>
+      <select title="Outcome - 0 means No Diabetes, 1 means Diabetes">
+        <option value="0">Outcome - No Diabetes</option>
+        <option value="1">Outcome - Diabetes</option>
+      </select>
+      <button type="button" id="predictBtn">⚡ Predict Risk</button>
+    </form>
+    <div id="resultBox" class="result-box"></div>
+    <canvas id="riskChart" style="max-width:300px;margin:20px auto;display:none;"></canvas>
+  </div>
+</section>
+
+<!-- Retinopathy Screening -->
+<section id="retina" class="container">
+  <h2>Retinopathy Screening</h2>
+  <div class="card retina-card" data-animate>
+    <p>Upload your retina image for a basic risk check (Demo).</p>
+    <input type="file" id="retinaUpload" accept="image/*">
+    <button id="analyzeBtn">🔍 Analyze Image</button>
+    <div id="progressBar" class="progress-bar"><div id="progressFill"></div></div>
+    <div id="imagePreview" class="image-preview"></div>
+    <div id="imageResult" class="result-box"></div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <h2>About This Project</h2>
+  <div class="cards">
+    <div class="feature-card" data-tip="Track your health and stay proactive">
+      <div class="icon">💡</div>
+      <h3>Health Awareness</h3>
+      <p>Understand your diabetes and retinopathy risk quickly with interactive tools.</p>
+    </div>
+    <div class="feature-card" data-tip="Uses medical input data for simulated analysis">
+      <div class="icon">📊</div>
+      <h3>Data-Driven</h3>
+      <p>Based on medical inputs and retina images to provide insights.</p>
+    </div>
+    <div class="feature-card" data-tip="Engaging charts and results keep you motivated">
+      <div class="icon">⚡</div>
+      <h3>Interactive Tools</h3>
+      <p>Dynamic charts, animated results, and progress indicators for engagement.</p>
+    </div>
+  </div>
+  <div id="tooltip"></div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <form class="contact-form">
+    <div class="input-group">
+      <input type="text" required placeholder=" ">
+      <label>Your Name</label>
+    </div>
+    <div class="input-group">
+      <input type="email" required placeholder=" ">
+      <label>Your Email</label>
+    </div>
+    <div class="input-group">
+      <textarea required placeholder=" "></textarea>
+      <label>Your Message</label>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 HealthPredict | Awareness Tool</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
